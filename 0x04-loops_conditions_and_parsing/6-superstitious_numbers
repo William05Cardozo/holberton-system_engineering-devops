@@ -12,7 +12,7 @@ case $i in
         echo bad luck from Japan
         ;;
     17)
-        echo ad luck from Italy
+        echo bad luck from Italy
         ;;
 esac
 ((i++))
