@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Show your Bash PID made easy
+# shellcheck disable=SC2009
+pgrep -l bash
