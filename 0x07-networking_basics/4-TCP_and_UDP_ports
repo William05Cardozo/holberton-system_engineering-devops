@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script only shows listening sockets
+# This script shows the PID and name program
+netstat -p -l
