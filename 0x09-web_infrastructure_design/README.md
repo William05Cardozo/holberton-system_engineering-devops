@@ -7,5 +7,5 @@ In this project we´ll look at the design and operation of a web infrastructure,
 
 ## Author:
 * William Cardozo
-- [GitHub](https://github.com/William05Cardozo)
+- [Kinkedin](https://www.linkedin.com/in/william-cardozo-700555222/)
 - [Twitter](https://twitter.com/W_anCardozo)
