@@ -6,4 +6,6 @@ In this project we´ll look at the design and operation of a web infrastructure,
 3. And last one and third infrastructure but with security checks such as FireWall and SSL certification (SumoLogic).
 
 ## Author:
-* William Cardozo 
+* William Cardozo
+- [GitHub](https://github.com/William05Cardozo)
+- [Twitter](https://twitter.com/W_anCardozo)
