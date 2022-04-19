@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
+#This script conneect to new server
 ssh -i ~/.ssh/school ubuntu@35.231.225.192
