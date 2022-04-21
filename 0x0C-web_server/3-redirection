@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 # Installed Nginx in our server
-sudo apt-get -y update
-sudo apt-get install -y --allow-downgrades nginx
-sudo ufw allow 'Nginx HTTP'
-sudo chown -R ubuntu /var/www/
-echo "Hello World!" > /var/www/html/index.html
+sudo apt-get update
+sudo apt-get install -y nginx
+echo "Hello World!" > index.html
+sudo mv index.html /var/www/html/
 sudo sed -i "/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/watch?v=dQw4w9WgXcQ permanent;" /etc/nginx/sites-available/default
 sudo service nginx restart
