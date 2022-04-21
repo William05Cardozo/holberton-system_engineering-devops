@@ -3,5 +3,6 @@
 sudo apt-get -y update
 sudo apt-get install -y --allow-downgrades nginx
 sudo ufw allow 'Nginx HTTP'
+sudo chown -R ubuntu /var/www/
+echo "Hello World!" > /var/www/html/index.html
 sudo service nginx start
-echo "Hello World!" | sudo tee -a /var/www/html/index.html
