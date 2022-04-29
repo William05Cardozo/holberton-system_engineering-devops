@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#Configure new server 
+
+apt-get -y update
+apt-get -y install nginx
+ufw allow  'Nginx HTTP' #on port 80
+echo "Hello World!" >/var/www/html/index.nginx-debian.html
+sed -i '46i rewrite ^/redirect_me https://www.nginx.com/ permanent;' /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" > /usr/share/nginx/html/custom_404.html
+sed -i '/listen 80 default_server;/a error_page 404 /custom_404.html;location = /custom_404.html {root /usr/share/nginx/html; internal;}' /etc/nginx/sites-available/default
+sed -i "/listen 80 default_server/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
+service nginx restart
