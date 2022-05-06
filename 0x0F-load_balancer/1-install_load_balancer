@@ -5,5 +5,5 @@ sudo apt -y upgrade
 sudo apt-get install -y haproxy
 sudo sed -i "$ a\ENABLED=1" /etc/default/haproxy
 sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.original
-sudo sed -i "$ a\ \tlisten artemixeservices\n\tmode http\n\tbind *:80\n\tbalance roundrobin\n\tserver 3907-web-01 3.80.92.5:80 check\n\tserver 3907-web-02 18.209.21.53:80 check" /etc/haproxy/haproxy.cfg
+sudo sed -i "$ a\ \tlisten william05cardozo\n\tmode http\n\tbind *:80\n\tbalance roundrobin\n\tserver 3907-web-01 34.138.174.14:80 check\n\tserver 3907-web-02 18.209.21.53:80 check" /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
