@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This script export the info. on a other archived"""
+"""This script to export data in the JSON format"""
 import json
 import requests
 
