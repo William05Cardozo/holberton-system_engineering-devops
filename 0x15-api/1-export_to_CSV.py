@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This script using a REST API"""
+"""This script export the info. on a other archived"""
 import csv
 import requests
 from sys import argv
