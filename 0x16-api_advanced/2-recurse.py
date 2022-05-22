@@ -7,24 +7,21 @@ Using a RecursiveFunction
 import requests
 
 
-def recurse(subreddit, hot_list=[], after=""):
+def recurse(subreddit, hot_list=[],):
 
-    if (after is None):
+    global after
+    headers = {'User-Agent': 'my-app/0.0.1'}
+    try:
+        url = "https://www.reddit.com/r/{}.json".format(sudreddit)
+        if after:
+            url = "https://www.reddit.com/r/{}.json?after={}".format(after)
+        gett = get(url, headers=headers, allow_redirects=False).json()
+        for children in gett['data']['children']:
+            hot_list.append(children.get('data').get('title'))
+        after = get(url, headers=headers,
+                    allow_redirects=False).json().get('data').get('after')
+        if ater:
+            return(recurse(sudreddit, hot_list))
         return(hot_list)
-    if (len(hot_list) == 0):
-        url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
-    else:
-        url = "https://www.reddit.com/r/{}hot.json?after={}".format(
-               subreddit, after)
-    headers = {'user-agent': 'my-app/0.0.1'}
-    rq = requests.get(url, headers=headers)
-    if (rq.status_code == 404):
-        return(None)
-    elif 'data' not in rq.json():
-        return(None)
-    else:
-        rq = rq.json()
-        for i in rq['data']['children']:
-            hot_list.append(i['data']['title'])
-    after = rq['data']['after']
-    return recurse(subreddit, hot_list, after)
+    except:
+        return("None")
