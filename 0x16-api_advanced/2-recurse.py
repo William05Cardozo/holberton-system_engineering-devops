@@ -20,7 +20,7 @@ def recurse(subreddit, hot_list=[], after=""):
     headers = {'user-agent': 'my-app/0.0.1'}
 
     rq = requests.get(url, headers=headers)
-    if (rq.status_code == 404):
+    if (rq.status_code is 404):
         return(None)
     elif 'data' not in rq.json():
         return(None)
