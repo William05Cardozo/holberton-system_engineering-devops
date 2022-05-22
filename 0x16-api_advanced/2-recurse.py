@@ -9,7 +9,7 @@ import requests
 
 def recurse(subreddit, hot_list=[], after=""):
 
-    if (after == None):
+    if (after is None):
         return(hot_list)
 
     if (len(hot_list) == 0):
@@ -30,4 +30,3 @@ def recurse(subreddit, hot_list=[], after=""):
             hot_list.append(i['data']['title'])
     after = rq['data']['after']
     return(recurse(subreddit, hot_list, after))
-
