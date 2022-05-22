@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""This script show all list using Recursive"""
 
 import requests
 
