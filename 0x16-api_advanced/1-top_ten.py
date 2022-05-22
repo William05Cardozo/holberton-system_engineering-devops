@@ -5,7 +5,7 @@ import requests
 
 
 def top_ten(subreddit):
-    url = "https://www.reddit.com/r/{}/host.json?limit=10".format(subreddit)
+    url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
     headers = {'user-agent': 'my-app/0.0.1'}
     rq = requests.get(url, headers=headers)
     if (rq.status_code == 404):
@@ -15,4 +15,4 @@ def top_ten(subreddit):
     else:
         rq = rq.json()
         for i in rq['data']['children']:
-            print(post['data']['title'])
+            print(i['data']['title'])
