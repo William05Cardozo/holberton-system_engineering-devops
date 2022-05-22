@@ -11,16 +11,14 @@ def recurse(subreddit, hot_list=[], after=""):
 
     if (after is None):
         return(hot_list)
-
     if (len(hot_list) == 0):
         url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     else:
         url = "https://www.reddit.com/r/{}hot.json?after={}".format(
-            subreddit, after)
+               subreddit, after)
     headers = {'user-agent': 'my-app/0.0.1'}
-
     rq = requests.get(url, headers=headers)
-    if (rq.status_code is 404):
+    if (rq.status_code == 404):
         return(None)
     elif 'data' not in rq.json():
         return(None)
